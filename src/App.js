@@ -1,20 +1,20 @@
 import React from 'react';
 import './App.css';
 import Layout from './components/Layout/Layout'
+import Shopping from './containers/Shopping/Shopping'
 
 class App extends React.Component {
-
-  state = {
-    products: [],
-    totalPrice: 0
-  }
 
   render() {
     return (
       <div className='App'>
+        Layout -
         <Layout>
-          <div>Shopping</div>
+          Shopping -
+          <Shopping />
+          - Shopping
         </Layout>
+        - Layout
       </div>
     )
   }

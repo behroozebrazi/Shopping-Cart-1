@@ -1,0 +1,31 @@
+.builder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.builder button {
+  display: block;
+  font: inherit;
+  padding: 5px;
+  margin: 0 12px;
+  width: 80px;
+  background-color: #9c27b0;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.builder button:hover {
+  color: pink;
+}
+
+.builder div {
+  color: #8e24aa;
+  font-weight: bold;
+  margin: 0 12px;
+}
