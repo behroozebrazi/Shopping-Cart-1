@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'StoryScript';
+  src: url('./fonts/Story_Script/StoryScript-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'StoryScript', sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  background-color: lightgray;
+}
