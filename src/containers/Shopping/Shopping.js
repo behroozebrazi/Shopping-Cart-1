@@ -2,6 +2,14 @@ import React from "react"
 import Wrapper from "../../hoc/Wrapper"
 import Controls from "../Controls/Controls"
 
+// products price $
+const prices = {
+  product1: 10,
+  product2: 20,
+  product3: 30,
+  product4: 40
+}
+
 class Shopping extends React.Component {
 
   // Number of items in the cart
@@ -15,11 +23,33 @@ class Shopping extends React.Component {
     totalPrice: 0
   }
 
+  // add product to the cart
+  addProductHandler = (type) => {
+    const products = { ...this.state.products }
+    products[type] += 1
+    const totalPrice = this.state.totalPrice + prices[type]
+    this.setState({ products: products, totalPrice: totalPrice })
+  }
+
+  // remove product from the cart
+  removeProductHandler = (type) => {
+    const products = { ...this.state.products }
+    products[type] -= 1
+    if (products[type] >= 0) {
+      const totalPrice = this.state.totalPrice - prices[type]
+      this.setState({ products: products, totalPrice: totalPrice })
+    }
+  }
+
   render() {
     return (
       <Wrapper>
         Controls -
-        <Controls />
+        <Controls
+          addProduct={this.addProductHandler}
+          removeProduct={this.removeProductHandler}
+          totalPrice={this.state.totalPrice}
+        />
         - Controls
       </Wrapper>
     )

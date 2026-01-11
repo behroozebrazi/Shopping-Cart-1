@@ -7,10 +7,10 @@ const Builder = (props) => {
     <div className="builder">
       Builder -
       <div>{props.title}</div>
-      <button>Add</button>
-      <button>Remove</button>
+      <button onClick={props.add}>Add</button>
+      <button onClick={props.remove}>Remove</button>
       - Builder
-    </div>
+    </div >
   )
 }
 

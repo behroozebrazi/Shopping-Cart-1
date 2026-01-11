@@ -13,7 +13,17 @@ const products = [
 const Controls = (props) => {
   return (
     <div className="controls">
-      {products.map((item, index) => (<Builder key={index} title={item.title} />))}
+      <div>
+        <h3>Total price: {props.totalPrice}</h3>
+      </div>
+      {products.map((item, index) => {
+        return <Builder
+          key={index}
+          title={item.title}
+          add={() => props.addProduct(item.type)}
+          remove={() => props.removeProduct(item.type)}
+        />
+      })}
     </div>
   )
 }
