@@ -1,6 +1,8 @@
 import React from "react"
 import Wrapper from "../../hoc/Wrapper"
 import Controls from "../Controls/Controls"
+import Modal from "../../components/UI/Modal/Modal"
+import Order from "../../components/Order/Order"
 
 // products price $
 const prices = {
@@ -20,7 +22,14 @@ class Shopping extends React.Component {
       product3: 0,
       product4: 0
     },
-    totalPrice: 0
+    totalPrice: 0,
+    showModal: false
+  }
+
+  // show/hide cart
+  showModalHandler = () => {
+    const showModal = !this.state.showModal
+    this.setState({ showModal: showModal })
   }
 
   // add product to the cart
@@ -44,11 +53,19 @@ class Shopping extends React.Component {
   render() {
     return (
       <Wrapper>
+
+        <Modal showModal={this.state.showModal} hideBackdrop={this.showModalHandler}>
+          Modal -
+          <Order products={this.state.products} />
+          - Modal
+        </Modal>
+
         Controls -
         <Controls
           addProduct={this.addProductHandler}
           removeProduct={this.removeProductHandler}
           totalPrice={this.state.totalPrice}
+          showModal={this.showModalHandler}
         />
         - Controls
       </Wrapper>

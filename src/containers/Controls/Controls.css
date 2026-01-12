@@ -1,3 +1,10 @@
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #6a1b9a;
+  user-select: none;
+}
+
 .controls {
   width: 40rem;
   background-color: #f0f0f0;
@@ -8,4 +15,16 @@
   border-radius: 5px;
   padding: 32px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+.order-btn {
+  font: inherit;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  color: #8e24aa;
+  background-color: #e1bee7;
+  margin-top: 40px;
+  padding: 10px 50px;
 }

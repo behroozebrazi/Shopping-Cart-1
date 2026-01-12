@@ -14,7 +14,7 @@ const Controls = (props) => {
   return (
     <div className="controls">
       <div>
-        <h3>Total price: {props.totalPrice}</h3>
+        <p className="price">Total price: {props.totalPrice}</p>
       </div>
       {products.map((item, index) => {
         return <Builder
@@ -24,7 +24,8 @@ const Controls = (props) => {
           remove={() => props.removeProduct(item.type)}
         />
       })}
-    </div>
+      <button className="order-btn" onClick={props.showModal}>Order</button>
+    </div >
   )
 }
 

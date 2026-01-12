@@ -1,0 +1,22 @@
+.modal {
+  box-sizing: border-box;
+  text-align: center;
+  width: 25vw;
+  position: fixed;
+  z-index: 100;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 0;
+  padding: 15px;
+  left: 38vw;
+  top: 20vh;
+  transition: all 0.5s ease-out;
+}
+
+@media (max-width: 60rem) {
+  .modal {
+    width: 30vw;
+    left: 35vw;
+  }
+}
