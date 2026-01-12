@@ -17,7 +17,7 @@
 /* Mobile size */
 @media (max-width: 48rem) {
   .modal {
-    width: 30vw;
-    left: 35vw;
+    width: 32vw;
+    left: 34vw;
   }
 }

@@ -29,3 +29,7 @@
   padding: 10px 50px;
   cursor: pointer;
 }
+
+.order-btn:hover {
+  font-weight: bold;
+}

@@ -8,13 +8,9 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        Layout -
         <Layout>
-          Shopping -
           <Shopping />
-          - Shopping
         </Layout>
-        - Layout
       </div>
     )
   }

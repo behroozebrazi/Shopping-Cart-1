@@ -22,9 +22,8 @@ const Order = (props) => {
         {summery}
       </ul>
       <h4>Total price: $ {props.totalPrice}</h4>
-      <p>Continue?</p>
-      <Button btnType='success' btnClick={props.btnYes}>Yes</Button>
-      <Button btnType='danger' btnClick={props.btnNo}>No</Button>
+      <Button btnType='success' btnClick={props.btnYes}>Place order</Button>
+      <Button btnType='danger' btnClick={props.btnNo}>Cancel</Button>
     </Wrapper>
   )
 }

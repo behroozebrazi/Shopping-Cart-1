@@ -20,8 +20,11 @@ const Controls = (props) => {
         return <Builder
           key={index}
           title={item.title}
+          price={props.prices[item.type]}
           add={() => props.addProduct(item.type)}
           remove={() => props.removeProduct(item.type)}
+          number={props.productsNumber[item.type]}
+
         />
       })}
       <button className="order-btn" onClick={props.showModal}>Order</button>

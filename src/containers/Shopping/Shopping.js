@@ -59,26 +59,22 @@ class Shopping extends React.Component {
   render() {
     return (
       <Wrapper>
-        Modal -
         <Modal showModal={this.state.showModal} hideBackdrop={this.showModalHandler}>
-          Order -
           <Order
             products={this.state.products}
             btnYes={this.continueShoppingHandler}
             btnNo={this.showModalHandler}
             totalPrice={this.state.totalPrice}
           />
-          - Order
         </Modal>
-        - Modal
-        Controls -
         <Controls
           addProduct={this.addProductHandler}
           removeProduct={this.removeProductHandler}
           totalPrice={this.state.totalPrice}
           showModal={this.showModalHandler}
+          productsNumber={this.state.products}
+          prices={prices}
         />
-        - Controls
       </Wrapper>
     )
   }

@@ -5,11 +5,11 @@ const Builder = (props) => {
 
   return (
     <div className="builder">
-      Builder -
       <div>{props.title}</div>
+      <div>${props.price}</div>
       <button onClick={props.add}>Add</button>
       <button onClick={props.remove}>Remove</button>
-      - Builder
+      <div>{props.number}</div>
     </div >
   )
 }
