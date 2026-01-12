@@ -1,0 +1,25 @@
+.navbar {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 3rem;
+  margin: 0;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background-color: #8e24aa;
+  color: white;
+}
+
+.navbar * {
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.navbar *:hover {
+  color: pink;
+}
