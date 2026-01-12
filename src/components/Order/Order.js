@@ -1,6 +1,7 @@
 import React from "react"
 import "./Order.css"
 import Wrapper from "../../hoc/Wrapper"
+import Button from "../UI/Button/Button"
 
 const Order = (props) => {
   // extract an object's keys to an array
@@ -20,6 +21,9 @@ const Order = (props) => {
       <ul className="order">
         {summery}
       </ul>
+      <p>Continue?</p>
+      <Button btnType='success' btnClick={props.btnYes}>Yes</Button>
+      <Button btnType='danger' btnClick={props.btnNo}>No</Button>
     </Wrapper>
   )
 }

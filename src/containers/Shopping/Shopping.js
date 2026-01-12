@@ -26,6 +26,12 @@ class Shopping extends React.Component {
     showModal: false
   }
 
+  // continue shopping after clicking on Yes button
+  continueShoppingHandler = () => {
+    console.log('Continue Shopping')
+    this.showModalHandler()
+  }
+
   // show/hide cart
   showModalHandler = () => {
     const showModal = !this.state.showModal
@@ -56,7 +62,10 @@ class Shopping extends React.Component {
         Modal -
         <Modal showModal={this.state.showModal} hideBackdrop={this.showModalHandler}>
           Order -
-          <Order products={this.state.products} />
+          <Order
+            products={this.state.products}
+            btnYes={this.continueShoppingHandler}
+            btnNo={this.showModalHandler} />
           - Order
         </Modal>
         - Modal
