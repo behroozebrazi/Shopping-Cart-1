@@ -17,10 +17,11 @@ const Order = (props) => {
 
   return (
     <Wrapper>
-      <h3>Order</h3>
+      <h3>★ Orders ★</h3>
       <ul className="order">
         {summery}
       </ul>
+      <h4>Total price: $ {props.totalPrice}</h4>
       <p>Continue?</p>
       <Button btnType='success' btnClick={props.btnYes}>Yes</Button>
       <Button btnType='danger' btnClick={props.btnNo}>No</Button>

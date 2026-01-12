@@ -65,7 +65,9 @@ class Shopping extends React.Component {
           <Order
             products={this.state.products}
             btnYes={this.continueShoppingHandler}
-            btnNo={this.showModalHandler} />
+            btnNo={this.showModalHandler}
+            totalPrice={this.state.totalPrice}
+          />
           - Order
         </Modal>
         - Modal
