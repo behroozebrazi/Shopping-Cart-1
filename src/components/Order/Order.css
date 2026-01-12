@@ -1,0 +1,10 @@
+.order {
+  padding: 0;
+  list-style: none;
+}
+
+.order li {
+  margin: 5px;
+  padding: 4px;
+  user-select: none;
+}

@@ -1,20 +1,21 @@
 .modal {
   box-sizing: border-box;
+  margin: 0;
+  padding: 15px;
   text-align: center;
-  width: 25vw;
   position: fixed;
+  width: 25vw;
+  left: 38vw;
+  top: 20vh;
   z-index: 100;
   background-color: white;
   border: 1px solid gray;
   border-radius: 5px;
-  margin: 0;
-  padding: 15px;
-  left: 38vw;
-  top: 20vh;
   transition: all 0.5s ease-out;
 }
 
-@media (max-width: 60rem) {
+/* Mobile size */
+@media (max-width: 48rem) {
   .modal {
     width: 30vw;
     left: 35vw;

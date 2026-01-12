@@ -14,7 +14,7 @@ const Controls = (props) => {
   return (
     <div className="controls">
       <div>
-        <p className="price">Total price: {props.totalPrice}</p>
+        <p className="price">Total price: $ {props.totalPrice}</p>
       </div>
       {products.map((item, index) => {
         return <Builder

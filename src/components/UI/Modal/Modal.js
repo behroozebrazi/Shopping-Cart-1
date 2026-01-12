@@ -7,8 +7,7 @@ const Modal = (props) => {
   return (
     <Wrapper>
       <Backdrop show={props.showModal} hideBackdrop={props.hideBackdrop} />
-      <div
-        className="modal"
+      <div className="modal"
         style={{
           transform: props.showModal ? 'translateY(0)' : 'translateY(-100vh)',
           opacity: props.showModal ? '1' : '0'

@@ -53,13 +53,13 @@ class Shopping extends React.Component {
   render() {
     return (
       <Wrapper>
-
+        Modal -
         <Modal showModal={this.state.showModal} hideBackdrop={this.showModalHandler}>
-          Modal -
+          Order -
           <Order products={this.state.products} />
-          - Modal
+          - Order
         </Modal>
-
+        - Modal
         Controls -
         <Controls
           addProduct={this.addProductHandler}
