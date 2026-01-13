@@ -3,6 +3,8 @@ import Wrapper from "../../hoc/Wrapper"
 import Controls from "../Controls/Controls"
 import Modal from "../../components/UI/Modal/Modal"
 import Order from "../../components/Order/Order"
+import Loader from "../../components/UI/Loader/Loader"
+import axios from "../../axios-orders"
 
 // products price $
 const prices = {
@@ -23,13 +25,24 @@ class Shopping extends React.Component {
       product4: 0
     },
     totalPrice: 0,
-    showModal: false
+    showModal: false,
+    loading: false
   }
 
   // continue shopping after clicking on Yes button
-  continueShoppingHandler = () => {
-    console.log('Continue Shopping')
-    this.showModalHandler()
+  placeOrderHandler = () => {
+    this.setState({ loading: true, showModal: true })
+    const order = {
+      customer: { name: 'Behrooz', email: 'gmail@gmail.com' },
+      products: this.state.products,
+      totalPrice: this.state.totalPrice,
+    }
+    axios.post('/orders.json', order)
+      .then((response) => { this.setState({ loading: false, showModal: false }) })
+      .catch((error) => {
+        this.setState({ loading: false, showModal: false })
+        console.log(error)
+      })
   }
 
   // show/hide cart
@@ -57,15 +70,19 @@ class Shopping extends React.Component {
   }
 
   render() {
+    const order = this.state.loading
+      ? <Loader />
+      : <Order
+        products={this.state.products}
+        btnYes={this.placeOrderHandler}
+        btnNo={this.showModalHandler}
+        totalPrice={this.state.totalPrice}
+      />
+
     return (
       <Wrapper>
         <Modal showModal={this.state.showModal} hideBackdrop={this.showModalHandler}>
-          <Order
-            products={this.state.products}
-            btnYes={this.continueShoppingHandler}
-            btnNo={this.showModalHandler}
-            totalPrice={this.state.totalPrice}
-          />
+          {order}
         </Modal>
         <Controls
           addProduct={this.addProductHandler}

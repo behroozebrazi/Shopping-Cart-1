@@ -4,14 +4,14 @@
   padding: 15px;
   text-align: center;
   position: fixed;
-  width: 25vw;
-  left: 38vw;
+  width: 30vw;
+  left: 35vw;
   top: 20vh;
   z-index: 100;
   background-color: white;
   border: 1px solid gray;
   border-radius: 5px;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 /* Mobile size */

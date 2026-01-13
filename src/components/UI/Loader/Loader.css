@@ -1,0 +1,11 @@
+.loader {
+  margin: 1rem;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: white;
+  color: red;
+}
