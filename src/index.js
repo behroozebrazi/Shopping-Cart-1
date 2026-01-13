@@ -10,3 +10,5 @@ root.render(<App />)
 // (2) Define Components
 // (3) Design States
 // (4) npm install --save axios
+// (5) https://console.firebase.google.com
+// (5) https://www.contentful.com/

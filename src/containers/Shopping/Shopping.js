@@ -18,18 +18,23 @@ class Shopping extends React.Component {
 
   // Number of items in the cart
   state = {
-    products: {
-      product1: 0,
-      product2: 0,
-      product3: 0,
-      product4: 0
-    },
+    products: null,
     totalPrice: 0,
     showModal: false,
     loading: false
   }
 
-  // continue shopping after clicking on Yes button
+  // get data from backend after loading DOM
+  componentDidMount() {
+    axios.get('/products.json')
+      .then((response) => {
+        this.setState({ products: response.data })
+        console.log(response)
+      })
+      .catch((error) => { console.log(error) })
+  }
+
+  // post data to backend after clicking on "Place order" button
   placeOrderHandler = () => {
     this.setState({ loading: true, showModal: true })
     const order = {
@@ -69,29 +74,37 @@ class Shopping extends React.Component {
     }
   }
 
+
   render() {
-    const order = this.state.loading
-      ? <Loader />
-      : <Order
-        products={this.state.products}
-        btnYes={this.placeOrderHandler}
-        btnNo={this.showModalHandler}
+    let order = null
+    let controls = <Loader />
+
+    if (this.state.products) {
+      order = this.state.loading
+        ? <Loader />
+        : <Order
+          products={this.state.products}
+          btnYes={this.placeOrderHandler}
+          btnNo={this.showModalHandler}
+          totalPrice={this.state.totalPrice}
+        />
+
+      controls = <Controls
+        addProduct={this.addProductHandler}
+        removeProduct={this.removeProductHandler}
         totalPrice={this.state.totalPrice}
+        showModal={this.showModalHandler}
+        productsNumber={this.state.products}
+        prices={prices}
       />
+    }
 
     return (
       <Wrapper>
         <Modal showModal={this.state.showModal} hideBackdrop={this.showModalHandler}>
           {order}
         </Modal>
-        <Controls
-          addProduct={this.addProductHandler}
-          removeProduct={this.removeProductHandler}
-          totalPrice={this.state.totalPrice}
-          showModal={this.showModalHandler}
-          productsNumber={this.state.products}
-          prices={prices}
-        />
+        {controls}
       </Wrapper>
     )
   }
