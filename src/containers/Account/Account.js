@@ -33,6 +33,15 @@ class Account extends React.Component {
     }
   }
 
+  inputChangeHandler = (event, inputElement) => {
+    const updatedForm = { ...this.state.form }
+    const updatedElement = { ...updatedForm[inputElement] }
+    updatedElement.value = event.target.value
+    updatedForm[inputElement] = updatedElement
+    this.setState({ form: updatedForm })
+  }
+
+
   render() {
     // convert an object to an array
     const elementArray = []
@@ -53,7 +62,8 @@ class Account extends React.Component {
               key={item.id}
               value={item.config.value}
               elementType={item.config.elementType}
-              elementConfig={item.config.elementConfig} />
+              elementConfig={item.config.elementConfig}
+              change={(event) => this.inputChangeHandler(event, item.id)} />
           })}
 
           <Button btnType='submit' btnClick={() => { }}>Submit</Button>
