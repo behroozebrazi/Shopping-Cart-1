@@ -36,6 +36,9 @@ class Shopping extends React.Component {
 
   // post data to backend after clicking on "Place order" button
   placeOrderHandler = () => {
+    // open checkout page
+    this.props.history.push('/checkout')
+    // post data to backend
     this.setState({ loading: true, showModal: true })
     const order = {
       customer: { name: 'Behrooz', email: 'gmail@gmail.com' },
