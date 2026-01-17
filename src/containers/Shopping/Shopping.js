@@ -29,7 +29,7 @@ class Shopping extends React.Component {
     axios.get('/products.json')
       .then((response) => {
         this.setState({ products: response.data })
-        console.log(response)
+        // console.log(response)
       })
       .catch((error) => { console.log(error) })
   }
