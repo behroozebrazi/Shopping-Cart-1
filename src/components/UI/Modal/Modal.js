@@ -9,7 +9,7 @@ const Modal = (props) => {
       <Backdrop show={props.showModal} hideBackdrop={props.hideBackdrop} />
       <div className="modal"
         style={{
-          transform: props.showModal ? 'translateY(0)' : 'translateY(-100vh)',
+          transform: props.showModal ? 'translateY(0)' : 'translateY(-130vh)',
           opacity: props.showModal ? '1' : '0'
         }}
       >

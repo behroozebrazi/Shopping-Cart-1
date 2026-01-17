@@ -1,0 +1,20 @@
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-items: center;
+}
+
+.input-element {
+  box-sizing: border-box;
+  margin: 20px 0;
+  padding: 5px;
+  width: 90%;
+  max-width: 300px;
+  display: block;
+  outline: none;
+  border: 1px solid darkmagenta;
+  border-radius: 5px;
+  background-color: white;
+}

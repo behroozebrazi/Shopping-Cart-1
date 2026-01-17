@@ -17,3 +17,13 @@
 .danger {
   background-color: red;
 }
+
+.submit {
+  background-color: darkmagenta;
+  transition: color 0.5s;
+}
+
+.submit:hover {
+  color: pink;
+
+}

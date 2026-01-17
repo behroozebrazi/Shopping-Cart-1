@@ -1,4 +1,16 @@
 .account {
-  text-align: center;
+  box-sizing: border-box;
+  width: 60%;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 0;
+  padding: 0 10px 10px 10px;
+  display: inline-block;
+  box-shadow: 0 0 3px gray;
+  border-radius: 10px;
+  background-color: #eeeeee;
+}
+
+.account h2 {
   color: darkred;
 }
